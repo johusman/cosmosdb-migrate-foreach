@@ -6,9 +6,12 @@
     "@azure/cosmos": "^2.1.5",
     "commander": "^2.20.0"
   },
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "name": "cosmosdb-migrate-foreach",
   "version": "0.1.1",
-  "description": "Traverses all documents in a CosmosDB database and writes back altered versions or deletes them, based on plain javascript code that you supply.",
+  "description": "Iterates over all documents in a CosmosDB container and writes back altered versions or deletes them (or NOP), based on plain javascript code that you supply.",
   "main": "cosmosdb-migrate-foreach.js",
   "author": "Johan Husman <johusman@gmail.com>",
   "license": "MIT",

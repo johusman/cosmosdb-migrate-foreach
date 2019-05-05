@@ -53,7 +53,7 @@ async function handleContainer(container, processor) {
         const document = response.result;
         const id = document.id;
 
-        /* Probably can't pass async callback code to processDocument, so we queue */
+        /* Probably can't pass async callback code to sandboxed processor, so we queue and do it later */
         let operation = async () => { console.log("Ignoring document " + id); };
 
         processor(document, {
