@@ -8,7 +8,7 @@ const CosmosClient = require("@azure/cosmos").CosmosClient;
 const vm = require('vm');
 
 commander
-    .version("0.1.1")
+    .version("0.1.2")
     .usage("<options> [code]")
     .option('-a, --account <account>', "CosmosDB account endpoint url (required)")
     .option('-d, --database <database>', "Database (required)")
@@ -67,6 +67,11 @@ async function handleContainer(container, processor) {
                 operation = async () => {
                     console.log("Replacing document " + id);
                     await container.items.upsert(newVersion);
+                };
+            },
+            log: (obj) => {
+                operation = async () => {
+                    console.log(obj);
                 };
             }
         });
